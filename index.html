@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Приглашение в кино 🎬</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ticket" id="ticketCard">
+        <!-- Киноплёнка сверху -->
+        <div class="film-strip"></div>
+        
+        <!-- Логотип кинотеатра -->
+        <div class="cinema-logo">
+            <span class="neon">🎬</span>
+            <span class="neon-text">CINEMA</span>
+            <span class="neon">✨</span>
+        </div>
+
+        <div class="stamp">⭐ ПРЕМЬЕРА ⭐</div>
+
+        <h1>ТЫ ПРИГЛАШЕНА</h1>
+        <div class="subhead">✦ на главную премьеру вечера ✦</div>
+
+        <!-- Постер (заглушка) -->
+        <div class="movie-poster">
+            <span class="poster-emoji">🎞️</span>
+            <span class="poster-title">"Наше свидание"</span>
+            <span class="poster-year">2026</span>
+        </div>
+
+        <!-- Таймер -->
+        <div class="countdown" id="countdown">
+            <span id="days">0</span> дн. 
+            <span id="hours">0</span> ч. 
+            <span id="minutes">0</span> мин.
+        </div>
+
+        <!-- Информация о сеансе -->
+        <div class="info-grid">
+            <div class="info-row">
+                <span class="icon">📅</span>
+                <span class="label">Сеанс</span>
+                <span class="value highlight">Суббота · 20:45</span>
+            </div>
+            <div class="info-row">
+                <span class="icon">📍</span>
+                <span class="label">Кинотеатр</span>
+                <span class="value">ДК им. В.В. Куйбышева</span>
+            </div>
+            <div class="info-row">
+                <span class="icon">🏛️</span>
+                <span class="label">Адрес</span>
+                <span class="value">ул. Партизанская, 95</span>
+            </div>
+            <div class="info-row">
+                <span class="icon">🎫</span>
+                <span class="label">Билет</span>
+                <span class="value">VIP-место ❤️</span>
+            </div>
+        </div>
+
+        <!-- Кнопки -->
+        <div class="button-group">
+            <button class="btn-yes" id="acceptBtn">
+                <span>🎟️ ИДУ!</span>
+            </button>
+            <button class="btn-no" id="rejectBtn">
+                <span>😔 Не смогу...</span>
+            </button>
+        </div>
+
+        <!-- Скрытые сообщения -->
+        <div class="hidden-message accept-msg" id="acceptMessage">
+            🥂 <br>
+            Ты сделала мой день! <br>
+            <span style="font-size: 14px; opacity: 0.8;">Жду с нетерпением ❤️</span>
+        </div>
+
+        <div class="hidden-message reject-msg" id="rejectMessage">
+            🐶 <br>
+            <span style="font-size: 40px;">🥺</span><br>
+            <span style="font-size: 18px; font-weight: 600;">Ой... щеночек грустит...</span><br>
+            <span style="font-size: 14px; opacity: 0.7;">Может, передумаешь? 😢</span>
+        </div>
+
+        <div class="footer-note">
+            ★ Билет действителен только для тебя ★
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>

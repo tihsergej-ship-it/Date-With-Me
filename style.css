@@ -1,0 +1,384 @@
+/* style.css */
+/* style.css - Кинотеатральный дизайн */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    background: #0a0a0a;
+    background-image: 
+        radial-gradient(ellipse at 20% 50%, #1a0a2e 0%, #0a0a0a 80%),
+        radial-gradient(ellipse at 80% 50%, #1a0a2e 0%, #0a0a0a 80%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    margin: 0;
+    touch-action: manipulation;
+}
+
+/* Киноплёнка сверху */
+.film-strip {
+    height: 8px;
+    background: repeating-linear-gradient(90deg, 
+        #1a1a1a 0px, #1a1a1a 12px, 
+        transparent 12px, transparent 18px,
+        #1a1a1a 18px, #1a1a1a 30px,
+        transparent 30px, transparent 36px,
+        #1a1a1a 36px, #1a1a1a 48px,
+        transparent 48px, transparent 54px,
+        #1a1a1a 54px, #1a1a1a 66px
+    );
+    border-radius: 4px 4px 0 0;
+    margin: -28px -22px 12px -22px;
+    opacity: 0.8;
+    border-bottom: 3px solid #ffd700;
+}
+
+.ticket {
+    max-width: 400px;
+    width: 100%;
+    background: #1a1a1a;
+    background: linear-gradient(145deg, #1e1e1e, #121212);
+    border-radius: 20px 20px 16px 16px;
+    padding: 28px 22px 32px;
+    box-shadow: 
+        0 0 40px rgba(255, 215, 0, 0.15),
+        0 20px 60px rgba(0, 0, 0, 0.9),
+        inset 0 0 60px rgba(255, 215, 0, 0.03);
+    position: relative;
+    border: 1px solid #2a2a2a;
+    border-top: 3px solid #ffd700;
+    animation: float 4s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) scale(1); }
+    100% { transform: translateY(-6px) scale(1.005); }
+}
+
+.ticket::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255, 215, 0, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+.stamp {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    background: #ffd700;
+    color: #1a1a1a;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    padding: 4px 20px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 0 #b8960e;
+    border: 1px solid #ffe066;
+}
+
+/* Логотип кинотеатра */
+.cinema-logo {
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.neon {
+    font-size: 32px;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+}
+
+.neon-text {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffd700, #ffb800, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    letter-spacing: 4px;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.subhead {
+    text-align: center;
+    font-size: 14px;
+    color: #aa8b6e;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 14px;
+}
+
+/* Постер */
+.movie-poster {
+    background: linear-gradient(145deg, #1e1e1e, #0a0a0a);
+    border: 2px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-poster::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.02) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.poster-emoji {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.poster-title {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffd700;
+    letter-spacing: 2px;
+    font-family: 'Georgia', serif;
+}
+
+.poster-year {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    letter-spacing: 4px;
+    margin-top: 4px;
+}
+
+/* Таймер */
+.countdown {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.05);
+    padding: 10px 12px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    letter-spacing: 1px;
+    backdrop-filter: blur(4px);
+}
+
+.countdown span {
+    background: #0a0a0a;
+    color: #ffd700;
+    padding: 2px 12px;
+    border-radius: 8px;
+    margin: 0 2px;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    font-size: 22px;
+}
+
+/* Информация */
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 215, 0, 0.04);
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.06);
+    backdrop-filter: blur(2px);
+    transition: all 0.3s;
+}
+
+.info-row:hover {
+    background: rgba(255, 215, 0, 0.06);
+    border-color: rgba(255, 215, 0, 0.15);
+}
+
+.info-row .icon {
+    font-size: 22px;
+    width: 34px;
+    text-align: center;
+}
+
+.info-row .label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #aa8b6e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 60px;
+}
+
+.info-row .value {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e0d5c8;
+    word-break: break-word;
+}
+
+.value.highlight {
+    background: linear-gradient(135deg, #ffd700, #f0c000);
+    color: #1a1a1a;
+    padding: 2px 14px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-shadow: none;
+}
+
+/* Кнопки */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.btn-yes, .btn-no {
+    flex: 1;
+    padding: 16px 10px;
+    border: none;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    touch-action: manipulation;
+    cursor: pointer;
+    transition: all 0.08s linear;
+    position: relative;
+}
+
+.btn-yes {
+    background: linear-gradient(145deg, #ffd700, #e6b800);
+    color: #1a1a1a;
+    box-shadow: 0 8px 0 #b8960e, 0 4px 20px rgba(255, 215, 0, 0.3);
+}
+
+.btn-yes:active {
+    transform: translateY(6px);
+    box-shadow: 0 2px 0 #b8960e, 0 4px 20px rgba(255, 215, 0, 0.2);
+}
+
+.btn-yes:disabled {
+    opacity: 0.6;
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #b8960e;
+    cursor: default;
+}
+
+.btn-no {
+    background: linear-gradient(145deg, #3a2a2a, #2a1a1a);
+    color: #aa8b6e;
+    box-shadow: 0 8px 0 #1a0a0a, 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 200, 200, 0.05);
+}
+
+.btn-no:active {
+    transform: translateY(6px);
+    box-shadow: 0 2px 0 #1a0a0a;
+}
+
+.btn-no:disabled {
+    opacity: 0.4;
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #1a0a0a;
+    cursor: default;
+}
+
+/* Скрытые сообщения */
+.hidden-message {
+    display: none;
+    margin-top: 16px;
+    padding: 16px 12px;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    animation: fadeSlide 0.5s ease;
+}
+
+.hidden-message.show {
+    display: block;
+}
+
+.accept-msg {
+    background: linear-gradient(145deg, #1a2a1a, #0a1a0a);
+    color: #ffd700;
+    border: 2px solid #ffd700;
+}
+
+.reject-msg {
+    background: linear-gradient(145deg, #1a101a, #0a050a);
+    color: #ff8a8a;
+    border: 2px solid #ff6b6b;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.05);
+}
+
+@keyframes fadeSlide {
+    0% { opacity: 0; transform: translateY(15px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 11px;
+    color: #444;
+    letter-spacing: 1.5px;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 14px;
+    font-weight: 300;
+}
+
+/* Адаптив */
+@media (max-width: 400px) {
+    .ticket { padding: 20px 14px 24px; }
+    h1 { font-size: 24px; }
+    .info-row .value { font-size: 14px; }
+    .btn-yes, .btn-no { font-size: 16px; padding: 14px 8px; }
+    .countdown { font-size: 17px; }
+    .countdown span { font-size: 18px; }
+    .film-strip { margin: -20px -14px 10px -14px; }
+}
